@@ -1,0 +1,102 @@
+footer{
+	@include padding(60 0); 
+	background:{
+		color: $footerbg-color;
+	}
+	@media screen and (max-width:$ptablet){
+		@include padding(30 0); 
+	}
+	.footer-left{
+		float: left;
+		width:50%;
+
+		.foot-applink{
+			text-align: left;
+			@media screen and (max-width:$ptablet){
+				text-align: center;
+			}
+			li{
+				@include display(middle);
+				@include margin-right(20);
+				@media screen and (max-width:$mini-desktop){
+					@include margin-right(15);
+				}
+				@media screen and (max-width:$tablet-landscape){
+					@include margin(0 10);
+					width:40%;
+				}
+			}
+		}
+		@media screen and (max-width:$ptablet){
+			width:100%;
+		}
+	}
+	.footer-right{
+		text-align: right;
+		float: left;
+		width:50%;
+		
+		@media screen and (max-width:$ptablet){
+			width:100%;
+			text-align: center;
+			@include margin-top(20);
+		}
+	}
+	.foot-social{
+		li{
+			@include display(middle);
+			@include margin(0 4 20 0);
+			text-align: center;
+			a{
+				@include display(middle);
+				color:$white-color;
+				font-size:32px;
+				&:hover{	
+				color:$sky-color;			
+				}				
+			}
+			@media screen and (max-width:$ptablet){
+				@include margin(0 4 10 0);
+			}
+		}
+	}
+	.foot-content{		
+		.foot-link{
+			float: right;
+			@media screen and (max-width:$ptablet){
+				width:100%;
+				text-align: center;
+			}
+			li{
+				@include display(middle);
+				@include padding(0 5 0 8);
+				@include pos(r, null);
+				&:before{
+					content:'';
+					@include height-width(100%,1px);
+					background-color:$white-color;
+					@include pos(a, 0 auto auto 0);
+				}
+				&:first-child{
+					&:before{
+						content:none;					
+					}
+				}
+				a{
+					@include display(middle);
+					@include text-format(14px,$white-color,400,$family);
+					&:hover{	
+						color:$sky-color;			
+					}	
+				}
+			}
+		}
+	}
+	.copyright-outer{
+		.copyright{
+			@include text-format(16px,$placeholder-color,400,$family);
+			@include padding-bottom(0);
+			@include margin-top(20);
+		}
+	}
+}

@@ -1,0 +1,427 @@
+.banner{
+	@include height-width(calc(100vh - 70px),100%);
+	@include pos(r, null);
+	background:{
+		image:url('../images/banner-img.jpg');
+		repeat:no-repeat;
+		size:cover;
+	}
+	@media screen and (max-width:$ptablet){
+		height:auto;
+	}
+	&:after{
+		content: '';
+	    @include pos(a, 0 0 auto auto);	   
+		border-right: 122px solid #81b8e3;
+		border-bottom: 116px solid transparent;
+		@media screen and (max-width:$tablet){
+			border-right: 80px solid #81b8e3;
+			border-bottom: 80px solid transparent;
+		}
+		@media screen and (max-width:$ptablet){
+			content:none;
+		}
+	}
+	&:before{
+		content: '';
+	    @include pos(a, auto auto 0 0);	   
+		border-left: 365px solid #81b8e3;
+		border-top: 365px solid transparent;
+		@media screen and (max-width:$tablet){
+			border-left:200px solid #81b8e3;
+		border-top: 200px solid transparent;
+		}
+		@media screen and (max-width:$ptablet){
+			content:none;
+		}
+	}
+	.banner-outer{
+		display: table;
+		@include height-width(100vh,100%);
+		.banner-inner{
+			display:table-cell;
+			vertical-align: middle;
+		}
+	}
+	.banner-left{
+		width:40%;
+		@include display(middle);
+		@media screen and (max-width:$ptablet){
+			width:100%;
+			text-align: center;
+		}
+		img{
+			position: absolute;
+			bottom: -130px;
+			@media screen and (min-height:1440px){
+				position: static;
+			}
+			@media screen and (max-width:$desktop){
+				width:280px;
+				bottom: -100px;	
+			}
+			@media screen and (max-width:$tablet){
+				position: static;
+			}
+			@media screen and (max-width:$ptablet){				
+				@include margin-top(150);
+			}
+		}
+		
+	}
+	.banner-right{
+		width:59%;
+		@include display(middle);
+		@media screen and (max-width:$ptablet){
+			width:100%;
+			@include margin(0 0 20 0);
+			text-align: center;
+		}
+		h2{
+			@include text-format(58px,$white-color,900,$family);
+			line-height: 52px;
+			@include margin-bottom(20);
+			span{
+				color:$sky-color;
+			}
+			@media screen and (max-width:$tablet){
+				font-size:45px;
+			}
+			@media screen and (max-width:$ptablet){
+				@include margin-top(30);
+				font-size:26px;
+				line-height: 30px;
+			}
+		}
+		p{
+			@include text-format(20px,$white-color,400,$family);
+			line-height: 28px;
+			@include padding-bottom(40);
+			@media screen and (max-width:$ptablet){
+				font-size:16px;
+				line-height: 20px;
+				@include padding-bottom(30);
+			}
+		}
+		ul{
+			li{
+				@include display(middle);
+				@include margin-right(15);
+				@media screen and (max-width:$tablet){
+					max-width:45%;
+				}
+				@media screen and (max-width:$ptablet){
+					@include margin-right(0);
+					
+				}
+			}
+		}
+	}
+}
+main{
+	&.iner-page{
+		@include padding(150 0 50 0);
+		@media screen and (max-width:$ptablet){
+	      padding-top: 140px;
+	   }
+	   p{
+	   	 padding-bottom:15px;
+		  a{
+		    color:$sky-color;
+		    word-break: break-all;
+		  }
+	   }
+&.faq-page{
+    .accordion{
+      min-height: calc(100vh - 407px);
+       @media screen and (max-width:$ptablet){
+          min-height: calc(100vh - 315px);
+         }
+      .accordion-section{
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        .accordion-section-title{
+          @include text-format(20px,$p-color,400,$family);
+          background-color: #eee;
+          display: block;
+         @include padding(15); 
+         @media screen and (max-width:$ptablet){
+          font-size:16px;
+          line-height: 20px;
+         }         
+        }
+        .accordion-section-content{
+          padding: 20px;         
+        }
+      }
+    }
+  }
+}
+
+main.iner-page ul{
+  	list-style: disc ;
+	padding-left: 20px;
+ li{
+  p{
+    padding-left: 20px;
+    &:first-child{
+      padding-left: 0;
+    }
+  }
+ }
+  
+}
+
+
+
+	.a_section{
+		.left-section{
+			@include display(middle);
+			width:45%;
+			@media screen and (max-width:$ptablet){
+				width:100%;
+				text-align: center;
+			}
+		}
+		.right-section{
+			@include display(middle);
+			width:46%;
+			@media screen and (max-width:$ptablet){
+				width:100%;
+				text-align: center;
+			}
+		}
+		&.a_about_section{
+			background:{
+				image:url('../images/about-right-bg.png');
+				position: top right;
+				repeat:no-repeat;
+			}
+			@media screen and (max-width:$ptablet){
+				background-image: none;
+			}
+			.inner-bg{
+				background:{
+					image:url('../images/about-left-bg.png');
+					position: bottom left;
+					repeat:no-repeat;
+				}
+				@media screen and (max-width:$ptablet){
+					background-image: none;
+				}
+				.a_about_box{
+					padding: 0 9%;
+					@media screen and (max-width:$tablet){
+						padding: 0 5%;
+					}
+				}
+			}
+		}
+		&.a_update_section{
+			background-color: $white-color;
+			.a_update_box{
+				padding: 0 9%;
+				@media screen and (max-width:$ptablet){
+					padding: 0 5%;
+				}
+				.left-section{
+					width:55%;
+					@media screen and (max-width:$ptablet){
+						width:100%;	
+						text-align: center;				
+					}
+				}
+				.right-section{
+					width:44%;
+					text-align: right;
+					@media screen and (max-width:$ptablet){
+						width:100%;
+						text-align: center;
+					}
+				}
+			} 
+		}
+		&.a_awesome_section{
+			background:{
+				image:url('../images/awsome-left-bg.png');
+				position: center left;
+				repeat:no-repeat;
+			}
+			@media screen and (max-width:$ptablet){
+				background-image: none;
+			}
+			.inner-bg{
+				background:{
+					image:url('../images/awsome-right-bg.png');
+					position: bottom right;
+					repeat:no-repeat;
+				}
+				@media screen and (max-width:$ptablet){
+					background-image: none;
+				}
+				.a_awesome_box{
+					padding: 0 9%;
+					@media screen and (max-width:$tablet){
+						padding: 0 5%;
+					}
+					.left-section{
+						width:45%;
+						@media screen and (max-width:$ptablet){
+							width:100%;
+							text-align: center;
+						}
+					}
+					.right-section{
+						width:54%;
+						@media screen and (max-width:$ptablet){
+							width:100%;
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+		&.a_appwork_section{
+			background-color: $sky-color;
+			.box{
+				@include display(top);
+				width:24%;
+				@media screen and (max-width:$ptablet){
+					width:100%;
+				}
+				.appwork-icon{
+					border:10px solid #92c5ee;
+					background-color: $white-color;
+					display: inline-block;
+					@include pos(r, null);
+					@include margin-bottom(15);
+					@include height-width(168px,168px);
+					@include border-radius(50%);
+					@include box-shadow(3px,3px,0,rgba(0,0,0,0.1));	
+					@media screen and (max-width:$tablet){
+						@include height-width(145px,145px);
+						border-width:8px;
+					}
+					&.last{
+						&:after{
+							content: none;
+						}
+					}
+					&:after{
+				      @include height-width(3px,145px);
+				      background-color: rgba(0,0,0,0.1);
+				   	  content: '';
+				      @include pos(a, calc(50% - 1.5px) auto auto 160px);
+				      @media screen and (max-width:$tablet){
+				      	left:140px;
+				      }
+				      @media screen and (max-width:$ptablet){
+						content: none;
+					  }
+				    }				
+					span{
+						display: table;
+						@include height-width(100%,100%);
+						i{
+							display: table-cell;
+							vertical-align: middle;
+							color:$contactbg-color;
+							font-size:52px;
+							@media screen and (max-width:$tablet){
+							 	font-size:42px;
+							 }
+						}
+					}
+				}
+				h2{
+					@include text-format(26px,$grey-color,700,$family);
+					text-transform: uppercase;
+					@include margin(0 0 10 0);
+					@media screen and (max-width:$tablet){
+						font-size:20px;
+					}
+					@media screen and (max-width:$ptablet){
+						font-size:16px;
+					}
+				}
+				p{
+					@include font-size(20);
+					color:$grey-color;					
+					 @media screen and (max-width:$tablet){
+					 	line-height: 18px;
+					 	@include font-size(18);
+					 }
+				}
+			}
+		}
+		&.a_contact_section{
+			background-color: $contactbg-color;
+			@include padding(60 0);
+			@media screen and (max-width:$ptablet){
+				@include padding(40 0);
+			}
+			form{
+				@include margin-top(50);
+				@media screen and (max-width:$ptablet){
+					@include margin-top(30);
+				}
+				.a_formgroup{
+					width: 42%;
+					float: left;
+					margin: 0 4%;
+					@media screen and (max-width:$ptablet){
+						width: 100%;
+						margin: 0;
+					}
+					input,textarea{
+						@include text-format(24px,$grey-color,300,$family);
+						border-bottom:2px solid $white-color;
+						width:100%;
+						border-top:0 none;
+						border-right:0 none;
+						border-left:0 none;						
+						background-color: $transparent-color;
+						@include padding(25 0);
+						@include margin-bottom(25);
+						@include input-placeholder{
+							color:$placeholder-color;
+						}						
+						&:focus{
+							border-color:$sky-color;
+						}
+						@media screen and (max-width:$ptablet){
+							@include padding(10 0);
+							font-size:16px;
+						}
+						&[type="submit"]{
+							color:$white-color;
+							text-transform: uppercase;
+							background-color: $sky-color;
+							width: 300px;
+							cursor: pointer;
+							font-weight: bold;
+							border:2px solid $sky-color;
+							@include margin-top(25);
+							&:hover{
+								background-color: $transparent-color;
+							}
+							@media screen and (max-width:$tablet){
+								padding: 12px;
+							}
+							@media screen and (max-width:$ptablet){
+								width: 250px;
+							}
+						}
+					}
+					&.full-width{
+						width: 92%;
+						@media screen and (max-width:$ptablet){
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
